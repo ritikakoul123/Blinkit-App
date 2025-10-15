@@ -1,0 +1,68 @@
+.hero-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+  justify-content: center;
+}
+
+.hero-card {
+  flex: 1 1 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 14px;
+  color: #fff;
+  padding: 1.5rem;
+  min-height: 160px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
+}
+
+.hero-text h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.hero-text p {
+  margin: 0.5rem 0 1rem 0;
+  font-size: 0.95rem;
+}
+
+.hero-text button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  background-color: rgba(0,0,0,0.1);
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.hero-text button:hover {
+  background-color: rgba(0,0,0,0.2);
+}
+
+.hero-img img {
+  width: 100px;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .hero-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-img img {
+    width: 80px;
+    margin-top: 0.5rem;
+  }
+}

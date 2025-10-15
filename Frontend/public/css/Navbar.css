@@ -1,0 +1,136 @@
+/* Navbar Container*/
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.9rem 2.5rem;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+}
+
+/* Logo (Blinkit-like text logo) */
+.logo {
+  font-size: 1.9rem;
+  font-weight: 800;
+  color: #28a745;
+  letter-spacing: -0.5px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.logo span {
+  color: #ff9f1c;
+}
+
+/* Removed Delivery text and Search Bar */
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a,
+.nav-links button {
+  margin-left: 1rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* Login & Signup Buttons */
+.nav-links a {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.nav-links a:hover {
+  background-color: #23913e;
+  transform: translateY(-2px);
+}
+
+/* Logout Button */
+.logout-btn {
+  background-color: #ff4d4d;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  padding: 0.55rem 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.logout-btn:hover {
+  background-color: #e04444;
+  transform: translateY(-2px);
+}
+
+/* Cart Button Wrapper */
+.cart-btn-wrapper {
+  position: relative;
+  margin-left: 1rem;
+}
+
+.cart-btn {
+  background-color: #ff9f1c;
+  color: #fff;
+  border: none;
+  padding: 0.55rem 1.1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.cart-btn:hover {
+  background-color: #e78b14;
+  transform: translateY(-2px);
+}
+
+.cart-badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background-color: #ff4d4d;
+  color: #fff;
+  border-radius: 50%;
+  padding: 3px 7px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 1rem;
+  }
+
+  .logo {
+    justify-content: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+
+  .nav-links a,
+  .nav-links button {
+    margin-left: 0.6rem;
+    padding: 0.5rem 0.9rem;
+    font-size: 0.85rem;
+  }
+}
