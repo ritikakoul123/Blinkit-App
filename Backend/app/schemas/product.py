@@ -7,6 +7,7 @@ class ProductCreate(BaseModel):
     price: float
     image: Optional[str] = None
     units: Optional[List[str]] = []
+    quantity: Optional[int] = 0
 
 class ProductUpdate(BaseModel):
     name: Optional[str] = None
@@ -14,3 +15,4 @@ class ProductUpdate(BaseModel):
     price: Optional[float] = None
     image: Optional[str] = None
     units: Optional[List[str]] = None
+    quantity: Optional[int] = None

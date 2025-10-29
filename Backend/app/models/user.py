@@ -13,7 +13,7 @@ class User(Base):
     password = Column(String(255), nullable=False)
     address = Column(String(255), nullable=False)
     role_id = Column(Integer, ForeignKey("roles.id"), nullable=False)
-    
+
     role = relationship("Role", back_populates="users")
     orders = relationship("Order", back_populates="user", cascade="all, delete-orphan")
     cart_items = relationship("Cart", back_populates="user")
@@ -21,10 +21,6 @@ class User(Base):
     deleted_at = Column(Boolean, default=False)
     created_at = Column(DateTime, default=datetime.utcnow)
     updated_at = Column(DateTime, default=datetime.utcnow, onupdate=datetime.utcnow)
-
-
-
-
 
 
 

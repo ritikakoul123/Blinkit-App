@@ -15,6 +15,6 @@ class Product(Base):
     quantity = Column(Integer, default=0, nullable=False)
     deleted_at = Column(Boolean, default=False)
 
-    # Add this relationship (it was missing)
+    # Relationships
     order_items = relationship("OrderItem", back_populates="product", cascade="all, delete-orphan")
     carts = relationship("Cart", back_populates="product")

@@ -7,6 +7,8 @@ export default function ProductDetails({ products, cart, setCart, selectedUnits,
   const navigate = useNavigate();
   const [product, setProduct] = useState(null);
 
+  console.log(":::::editted");
+  
   useEffect(() => {
     const prod = products.find((p) => p.id === parseInt(id));
     if (!prod) {

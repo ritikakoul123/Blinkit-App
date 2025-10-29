@@ -32,21 +32,25 @@ export default function Login({ setUser }) {
       const data = await res.json();
 
       if (res.ok) {
-        // Save JWT token and user info
+        
+        // Save JWT token and user info with role_id and role_name
         const userData = {
           email: data.email,
           id: data.id,
+          name: data.name,
           token: data.access_token,
-          role: data.role_name
+          role: data.role_name,   // "admin" or "user"
+          role_id: data.role_id,  // 1 = admin, 2 = user
         };
         localStorage.setItem("user", JSON.stringify(userData));
+        cookieStore.set("access_token", )
 
         if (setUser) setUser(userData);
 
         alert("Login successful!");
 
-        // Redirect by role
-        if (data.role_id === 1) navigate("/Admin/dashboard");
+        // Redirect based on role
+        if (data.role_id === 1) navigate("/admin/dashboard");
         else navigate("/");
       } else {
         alert(data.detail || "Invalid credentials. Please try again!");
@@ -86,6 +90,12 @@ export default function Login({ setUser }) {
               onChange={handleChange}
               required
             />
+          </div>
+
+          <div className="forgot-password">
+            <span onClick={() => navigate("/forgetpassword")}>
+              Forgot Password?
+            </span>
           </div>
 
           <button type="submit" className="login-btn" disabled={loading}>
